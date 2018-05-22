@@ -7,8 +7,15 @@ linhas, colunas = img.shape
 
 _, thresh = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 
-histLinhas = [0] * linhas 
-histColunas = [0] * colunas
+if(linhas > colunas):
+	tamHistogramas = linhas
+else:
+	tamHistogramas = colunas
+
+histColunas = [0] * tamHistogramas
+histLinhas = [0] * tamHistogramas
+
+
 
 for i in range(0, linhas):
 	for j in range(0, colunas):
@@ -20,6 +27,4 @@ for j in range(0, colunas):
 		if(thresh[i][j] == 255):
 			histColunas[j] += 1
 
-
-print(histLinhas)
-print(histColunas)
+for i in range(tamHistogramas):
