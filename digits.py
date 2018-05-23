@@ -9,6 +9,18 @@ def leArquivo(nomeArquivo):
 
 	return(listalinhas)
 
+# Método que separa imagens que foram passadas atraves de uma lista por classes definidas.
+# Para utilizar, a classe de cada imagem deve estar no final de cada linha. 
+def imagesByClass(listaDeImagens, nClass, sizeClass):
+
+	imagesByClass = [[0 for i in range(sizeClass)] for j in range(nClass)]
+
+	for linha in listaDeImagens:
+		sizelin = len(linha)
+		imagesByClass[int(linha[sizelin - 1])] = linha[:-2]
+
+	return(imagesByClass)
+
 def dissimPorHistograma(imagem):
 	img = cv2.imread(imagem, 0)
 
