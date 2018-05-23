@@ -1,3 +1,5 @@
+# coding = utf-8
+
 import cv2
 import numpy as np
 
@@ -43,14 +45,6 @@ for i in range(1, tamHistogramas):
 
 for i in range(tamHistogramas):
 	dissimilaridade += abs(histAcumulVertical[i] - histAcumulHorizontal[i])
-
-print('Tamanho da imagem: {} x {} '.format(linhas, colunas))
-print(histVertical)
-print(histHorizontal)
-
-print(histAcumulVertical)
-print(histAcumulHorizontal)
-
 
 print('Dissimilaridade: {}'.format(dissimilaridade))
 
